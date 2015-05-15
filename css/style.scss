@@ -1,29 +1,4 @@
-$blue: #5ACFFF;
-$dkred: #281413;
-$black: #211415;
-$dkblue: #76949B;
-$oj: #F48D5D;
-$hover-color: #fff;
-$ltblack: rgba(0, 0, 0, 0.3);
-
-@mixin phone-res {
-	@media only screen and (max-width:480px) {
-		@content;
-	}
-}
-@mixin mid-res {
-	@media only screen and (min-width:481px) and (max-width:586px) {
-		@content;
-	}
-}
-
-$icons:(twitter, facebook, instagram);
-@each $social in $icons {
-	.#{$social} {
-		background: url("images/#{$social}.png") no-repeat;
-		background-size: contain;
-	}
-}
+@import "sassftw";
 
 header {
 	background: linear-gradient($ltblack, $ltblack), url("images/shoesite-bg.jpg") no-repeat;
@@ -45,7 +20,7 @@ header {
 			font-size: 1.5em;
 			left: 20px;
 		}
-		@include mid-res {
+		@include header-text {
 			font-size: 1.5em;
 		}
 	}
@@ -59,7 +34,7 @@ header {
 			top: 155px;
 			left: 150px;
 		}
-		@include mid-res {
+		@include header-text {
 			font-size: 1em;
 			top: 155px;
 			left: 250px;

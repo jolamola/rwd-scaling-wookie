@@ -1,0 +1,36 @@
+// Variables
+$blue: #5ACFFF;
+$dkred: #281413;
+$black: #211415;
+$dkblue: #76949B;
+$oj: #F48D5D;
+$hover-color: #fff;
+$ltblack: rgba(0, 0, 0, 0.3);
+
+
+
+
+//breakpoints for rwd
+@mixin phone-res {
+	@media only screen and (max-width:480px) {
+		@content;
+	}
+}
+@mixin header-text {
+	@media only screen and (min-width:481px) and (max-width:586px) {
+		@content;
+	}
+}
+
+
+
+
+
+//spits out social icons, use html to add more
+$icons:(twitter, facebook, instagram);
+@each $social in $icons {
+	.#{$social} {
+		background: url("images/#{$social}.png") no-repeat;
+		background-size: contain;
+	}
+}
