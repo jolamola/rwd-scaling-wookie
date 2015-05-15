@@ -11,6 +11,11 @@ $ltblack: rgba(0, 0, 0, 0.3);
 		@content;
 	}
 }
+@mixin mid-res {
+	@media only screen and (min-width:481px) and (max-width:586px) {
+		@content;
+	}
+}
 
 $icons:(twitter, facebook, instagram);
 @each $social in $icons {
@@ -28,10 +33,39 @@ header {
 	height: 500px;
 	@include phone-res {
 		background-position: 65%;
-		height: 400px;		
+		height: 300px;		
+	}
+	h1 {
+		color: #fff;
+		text-transform: uppercase;
+		position: absolute;
+		top: 130px;
+		left: 120px;
+		@include phone-res {
+			font-size: 1.5em;
+			left: 20px;
+		}
+		@include mid-res {
+			font-size: 1.5em;
+		}
+	}
+	h4 {
+		color: #fff;
+		position: absolute;
+		top: 170px;
+		left: 365px;
+		@include phone-res {
+			font-size: 1em;
+			top: 155px;
+			left: 150px;
+		}
+		@include mid-res {
+			font-size: 1em;
+			top: 155px;
+			left: 250px;
+		}
 	}
 	nav {
-		// background: $darken + 50;
 		width: 100%;
 		position: fixed;
 		top: 0;
