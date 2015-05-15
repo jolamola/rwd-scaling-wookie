@@ -4,30 +4,35 @@ $black: #211415;
 $dkblue: #76949B;
 $oj: #F48D5D;
 $hover-color: #fff;
-$darken: rgba(0, 0, 0, 0.1);
+$ltblack: rgba(0, 0, 0, 0.3);
 
 @mixin phone-res {
 	@media only screen and (max-width:480px) {
 		@content;
 	}
 }
-// body {
-// 	width: 100%;
-// 	height: auto;
-// }
+
+$icons:(twitter, facebook, instagram);
+@each $social in $icons {
+	.#{$social} {
+		background: url("images/#{$social}.png") no-repeat;
+		background-size: contain;
+	}
+}
+
 header {
-	background: linear-gradient($darken, $darken), url("images/shoesite-bg.jpg") no-repeat;
+	background: linear-gradient($ltblack, $ltblack), url("images/shoesite-bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: center;
 	width: 100%;
 	height: 500px;
 	@include phone-res {
-		background-position: 65%;		
+		background-position: 65%;
+		height: 400px;		
 	}
 	nav {
+		// background: $darken + 50;
 		width: 100%;
-		padding-left: 10px;
-		display:block;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -38,13 +43,12 @@ header {
 			width: 75px;
 			height: 75px;
 			float:left;
-			margin-right: 10px;
 			padding: 0 10px 0 10px;
 		}
-		ul {
+		ul.menu {
 			margin-top: 30px;
 		}
-		ul li {
+		ul.menu li {
 			list-style: none;
 			float: left;
 			display: inline;
@@ -53,9 +57,30 @@ header {
 				color: $oj;
 				text-decoration: none;
 				&:hover {
-					color: lighten($oj, 10%);
+					color: darken($oj, 5%);
 					padding-bottom: 5px;
 					border-bottom: 2px solid $oj;
+				}
+			}
+		}
+		ul.social-icons {
+			margin-right: 10px;
+			@include phone-res {
+				position: fixed;
+				top: 8px;
+				right: 0;
+				padding: 0;
+			}
+		}
+		ul.social-icons li {
+			list-style: none;
+			a {
+				float:right;
+				width: 30px;
+				height: 30px;
+				margin: -8px 5px 0 0;
+				@include phone-res {
+					margin: 3px 0;
 				}
 			}
 		}
