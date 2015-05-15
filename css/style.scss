@@ -78,7 +78,8 @@ header {
 		ul.social-icons {
 			margin-right: 10px;
 			@include phone-res {
-				position: fixed;
+				position: absolute;
+				width: 50px;
 				top: 8px;
 				right: 0;
 				padding: 0;
@@ -100,5 +101,21 @@ header {
 	}
 }
 
+section#collection {
+	h1 {
+		text-align: center;
+	}
+	h1::before, h1::after {
+		content: "";
+		display: inline-block;
+		height: 5px;
+		width: 20%;
+		background: $oj;
+		margin-top: 0;
+	}
+	.shoe-container {
+
+	}
+}
 
 
