@@ -1,0 +1,65 @@
+$blue: #5ACFFF;
+$dkred: #281413;
+$black: #211415;
+$dkblue: #76949B;
+$oj: #F48D5D;
+$hover-color: #fff;
+
+@mixin phone-res {
+	@media only screen and (max-width:480px) {
+		@content;
+	}
+}
+// body {
+// 	width: 100%;
+// 	height: auto;
+// }
+header {
+	background: url("images/shoesite-bg.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 500px;
+	@include phone-res {
+		// background:url("images/shoe-2.jpg") no-repeat;
+		// background-position: right;
+		
+	}
+	nav {
+		width: 100%;
+		background: rgba($black,0.1);
+		padding-left: 10px;
+		display:block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		border-top: 1px solid $dkblue;
+		img#logo {
+			width: 75px;
+			height: 75px;
+			margin-right: 10px;
+			float:left;
+		}
+		ul {
+			margin-top: 30px;
+		}
+		ul li {
+			list-style: none;
+			float: left;
+			display: inline;
+			padding: 0 10px 0 10px;
+			a {
+				color: $oj;
+				text-decoration: none;
+				&:hover {
+					color: $hover-color;
+					border-bottom: 2px solid $oj;
+				}
+			}
+		}
+	}
+}
+
+
+
