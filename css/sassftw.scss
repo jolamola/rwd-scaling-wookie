@@ -34,3 +34,13 @@ $icons:(twitter, facebook, instagram);
 		background-size: contain;
 	}
 }
+
+$shoes:(shoe, shoe-2, shoe-3, shoe-4, shoe-5, shoe-6);
+@each $shoe in $shoes {
+	##{$shoe} {
+		background: url("images/#{$shoe}.jpg") no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 250px;
+	}
+}
