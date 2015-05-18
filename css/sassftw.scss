@@ -22,7 +22,11 @@ $ltblack: rgba(0, 0, 0, 0.3);
 	}
 }
 
-
+//hover effect
+@mixin btn-hover-trans {
+	-webkit-transition: background-color 0.2s ease-out;
+	transition: background-color 0.2s ease-out;
+}
 
 
 
@@ -37,10 +41,11 @@ $icons:(twitter, facebook, instagram);
 
 $shoes:(shoe, shoe-2, shoe-3, shoe-4, shoe-5, shoe-6);
 @each $shoe in $shoes {
-	##{$shoe} {
+	.#{$shoe} {
 		background: url("images/#{$shoe}.jpg") no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 250px;
+		border-bottom: 1px solid black;
 	}
 }
