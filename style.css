@@ -109,6 +109,10 @@ header {
     header {
       background-attachment: scroll;
       height: 80vh; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    header {
+      background-attachment: scroll;
+      height: 50vh; } }
   header h1 {
     color: #fff;
     text-transform: uppercase;
@@ -223,6 +227,9 @@ section#collection {
     @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) {
       section#collection .shoe-container {
         height: 440px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      section#collection .shoe-container {
+        width: 300px; } }
     section#collection .shoe-container .shoe-info {
       margin-left: 10px;
       text-align: left; }

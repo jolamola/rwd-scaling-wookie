@@ -28,6 +28,10 @@ header {
 		background-attachment: scroll;
 		height: 80vh;
 	}
+	@include tablet-both {
+		background-attachment: scroll;
+		height: 50vh;
+	}
 	h1 {
 		color: #fff;
 		text-transform: uppercase;
@@ -162,6 +166,9 @@ section#collection {
 		}
 		@include phone-res-land-i6 {
 			height: 440px;
+		}
+		@include tablet-por {
+			width: 300px;
 		}
 		.shoe-info {
 			margin-left: 10px;
