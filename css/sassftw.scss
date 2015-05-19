@@ -11,17 +11,31 @@ $ltblack: rgba(0, 0, 0, 0.3);
 
 
 //breakpoints for rwd
-@mixin phone-res {
-	@media only screen and (max-width:480px) {
+@mixin phone-res-por-i6 {
+	@media only screen and (min-device-width : 320px) and (max-device-width:667px) {
 		@content;
 	}
 }
-@mixin header-text {
-	@media only screen and (min-width:481px) and (max-width:586px) {
+@mixin phone-res-land-i6 {
+	@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape)  {
 		@content;
 	}
 }
-
+@mixin phone-res-por-i5 {
+	@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) {
+		@content;
+	}
+}
+@mixin phone-res-land-i5 {
+	@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) {
+		@content;
+	}
+}
+// @mixin desktop-small {
+// 	@media (max-width: 568px) {
+// 		@content;
+// 	}
+// }
 //hover effect
 @mixin btn-hover-trans {
 	-webkit-transition: background-color 0.2s ease-out;
@@ -44,8 +58,13 @@ $shoes:(shoe, shoe-2, shoe-3, shoe-4, shoe-5, shoe-6);
 	.#{$shoe} {
 		background: url("images/#{$shoe}.jpg") no-repeat;
 		background-size: cover;
+		background-position: center;
 		width: 100%;
 		height: 250px;
 		border-bottom: 1px solid black;
+		@include phone-res-land-i6 {
+			background-position: center;
+			height: 100vh;
+		}
 	}
 }

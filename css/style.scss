@@ -16,12 +16,17 @@ header {
 	background-attachment: fixed;
 	width: 100%;
 	height: 500px;
-	@include phone-res {
-		background-position: 65% -125px;
-		height: 40vh;		
+	@include phone-res-por-i6 {
+		background-attachment: scroll;
+		height: 50vh;	
 	}
-	@include header-text {
-		background-position: 75%
+	@include phone-res-land-i6 {
+		background-attachment: scroll;
+		height: 80vh;
+	}
+	@include phone-res-land-i5 {
+		background-attachment: scroll;
+		height: 80vh;
 	}
 	h1 {
 		color: #fff;
@@ -29,28 +34,41 @@ header {
 		position: absolute;
 		top: 130px;
 		left: 120px;
-		@include phone-res {
+		@include phone-res-por-i6 {
 			font-size: 1.5em;
 			left: 20px;
 		}
-		@include header-text {
-			font-size: 1.5em;
+		@include phone-res-por-i5 {
+			font-size: 1.2em;
 		}
+		// @include desktop-small {
+		// 	// left: default;
+		// 	text-align: center;
+		// }
 	}
 	h4 {
 		color: #fff;
 		position: absolute;
 		top: 170px;
 		left: 365px;
-		@include phone-res {
+		text-align: center;
+		@include phone-res-por-i6 {
 			font-size: 1em;
-			top: 155px;
-			left: 150px;
+			top: 160px;
+			left: 80px;
+			// text-align: center;
 		}
-		@include header-text {
-			font-size: 1em;
+		@include phone-res-por-i5 {
+			top: 145px;
+			left: 75px;
+		}
+		@include phone-res-land-i6 {
 			top: 155px;
-			left: 250px;
+			left: 145px;
+		}
+		@include phone-res-land-i5 {
+			top: 150px;
+			left: 145px;
 		}
 	}
 	nav {
@@ -86,7 +104,7 @@ header {
 		}
 		ul.social-icons {
 			margin-right: 10px;
-			@include phone-res {
+			@include phone-res-por-i6 {
 				position: absolute;
 				width: 50px;
 				top: 8px;
@@ -102,7 +120,7 @@ header {
 				width: 30px;
 				height: 30px;
 				margin: -8px 5px 0 0;
-				@include phone-res {
+				@include phone-res-por-i6 {
 					margin: 3px 0;
 				}
 			}
@@ -113,6 +131,9 @@ header {
 section#collection {
 	width: 90%;
 	margin: 0 auto;
+	@include phone-res-por-i6 {
+		width: 100%;
+	}
 	h1 {
 		text-align: center;
 	}
@@ -126,47 +147,45 @@ section#collection {
 	}
 	.collection-wrapper {
 		text-align: center;
+		width: 100%;
 	}
 	.shoe-container {
 		border: 1px solid black;
-		margin-bottom: 15px;
+		margin: 10px;
 		width: 400px;
-		background: $dkblue;
+		height: 330px;
+		background: transparent;
 		display: inline-block;
-		@include phone-res {
+		@include phone-res-por-i6 {
 			background: transparent;
-			width: 100%;
-			height: 330px;
-
+			width: 95%;
+		}
+		@include phone-res-land-i6 {
+			height: 440px;
 		}
 		.shoe-info {
 			margin-left: 10px;
 			text-align: left;
 			p {
 				display: inline-block;
-				@include phone-res {
-					margin-top: 30px;
-				}
+				margin-top: 30px;
 			}
 			button {
 				background: $blue;
 				border: none;
 				padding: 10px 40px;
 				float: right;
-				display: inline;
+				margin-top: 20px;
+				margin-right: 20px; 
 				&:hover {
 					background-color: darken($blue,10%);
 					color: black;
-					@include btn-hover-trans;
-				}
-				@include phone-res {
-					margin-top: 20px;
-					margin-right: 20px;
 				}
 			}
+			@include phone-res-land-i6 {
+				// height: 100px;
+			}
+
 		}
 	}
-
 }
-
-
